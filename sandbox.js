@@ -1,45 +1,47 @@
-// const names = ['mario', 'shaun', 'chun-li', 'yoshi', 'luigi'];
-// // names.sort();
-// // names.reverse();
-// console.log(names);
+const todos = [
+  {text: 'play mariocart', author: 'shaun'},
+  {text: 'buy milk', author: 'mario'},
+  {text: 'buy bread', author: 'luigi'}
+]
 
-// const scores = [10, 5, 0, 40, 30, 10, 20, 70];
-// // scores.reverse();
-// // console.log(scores);
+// console.log(JSON.stringify(todos));
 
-const products = [
-  {name: 'gold star', price: 30},
-  {name: 'green shell', price: 10},
-  {name: 'red shell', price: 50},
-  {name: 'banana skin', price: 5},
-  {name: 'mushroom', price: 50},
-];
+localStorage.setItem('todos', JSON.stringify(todos));
 
-// const filtered = products.filter(product => product.price > 20);
+const stored = localStorage.getItem('todos');
 
-// const promos = filtered.map(product => {
-//   return `the ${product.name} is ${product.price / 2} pounds`;
-// })
+console.log(JSON.parse(stored));
 
-const promos = products
-.filter(product => product.price > 20)
-.map(product => `the ${product.name} is ${product.price / 2} pounds`);
 
-console.log(promos);
 
-// scores.sort((a,b) => a - b);
-// console.log(scores);
 
-// players.sort((a,b) => {
-//   if(a.score > b.score) {
-//     return -1;
-//   } else if(b.score > a.score) {
-//     return 1;
-//   } else {
-//     return 0;
-//   }
-// });
 
-// players.sort((a,b) => b.score - a.score);
 
-// console.log(players);
+
+// // store data in local storage
+// localStorage.setItem('name', 'mario');
+// localStorage.setItem('age', 50);
+
+
+// // get data from local storage
+// let name = localStorage.getItem('name');
+// let age = localStorage.getItem('age');
+
+// console.log(name, age);
+
+// // update data
+// // localStorage.setItem('name', 'luigi');
+// // localStorage.age = '40'
+
+// // name = localStorage.getItem('name');
+// // age = localStorage.getItem('age');
+// // console.log(name, age);
+
+// // deleting data from local storage
+// // localStorage.removeItem('name');
+// localStorage.clear();
+
+// name = localStorage.getItem('name');
+// age = localStorage.getItem('age');
+
+// console.log(name, age);
